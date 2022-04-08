@@ -1,0 +1,13 @@
+62fde1ee51af8cbe96519ede6ff848cf *DESCRIPTION
+a53c0adfd0e94f7bb5382efef0485ed9 *NAMESPACE
+0161436835b69dae383357da5b8df4c9 *R/MSmixt.R
+4076cfbc2d44a08537f8a98965aa2d2c *R/PLRfactorization.R
+6e5c04a214607c5e4fa3d577764127c6 *R/extra.R
+22343dbced4e865013629cc7b24caa6a *data/sim.rda
+cd4ecc53fce392f5d597cb13e2c3ebd8 *man/mscn.Rd
+f317651885572a4c1398a38d6ebd9311 *man/mst.Rd
+9f91d1f4a4c6d4d4a5a7c157b0709a5b *man/plot.MSclust.Rd
+487ec83e31e92eb6bf4d45ee1347a1bc *man/rmscn.Rd
+3be46beee503bccc404acf6332affe94 *man/rmst.Rd
+19396eb4a193598e25104e1b3d0f81e5 *man/sim.Rd
+8d08a54d6a50b121db2614106892d99b *man/summary.MSclust.Rd

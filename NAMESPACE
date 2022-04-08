@@ -1,0 +1,17 @@
+import(gtools)
+importFrom("mclust", "unmap", "Mclust")
+importFrom("mnormt", "rmnorm")
+importFrom("mvtnorm", "rmvnorm")
+importFrom("psych", "tr")
+importFrom("Matrix", "lu", "expand")
+importFrom("cluster", "pam")
+importFrom("graphics", "axis", "box", "pairs", "par", "plot")
+importFrom("stats", "dgamma", "dnorm", "kmeans", "optim", "rbinom",
+          "rchisq", "rgamma", "rmultinom", "rnorm", "runif")
+importFrom("ggplot2", "theme_bw", "ggtitle")
+importFrom("GGally", "ggparcoord")
+export(dmscn, rmscn, mscn, dmst, rmst, mst, plot.MSclust, summary.MSclust)
+S3method(plot,MSclust)
+S3method(summary,MSclust)
+
+
