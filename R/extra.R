@@ -5,9 +5,15 @@ plot.MSclust <- function(x, ...) {
 
   
   
-  model    <- x$model
+  
   clusters <- as.character(x$cluster)
-  outliers <- x$detect
+  
+  p=ncol(x$detect)
+  outliers<-matrix(0,nrow(x$detect),ncol(x$detect))
+  for(i in 1:p){
+    outliers[which(x$detect[,i]=='bad'),i]=1
+  }
+ 
   dat      <- x$X
   d        <- ncol(dat)
   d        <- ifelse(is.null(d), 1, d)
@@ -18,7 +24,7 @@ plot.MSclust <- function(x, ...) {
         theme_bw() + ggtitle('Parallel Coordinate Plot')
       
       if (d > 2) {
-        print(pairs(dat, col = clusters, pch = ifelse(outliers, pch_bad, pch_good),
+        print(pairs(dat, col = clusters,
               main = 'Cluster Memberships'))
       } else {
         print(plot(dat, col = clusters, pch = ifelse(outliers, pch_bad, pch_good),
@@ -40,7 +46,7 @@ plot.MSclust <- function(x, ...) {
   summary.MSclust <- function(object, ...) {
   
   
-  cat('\nIterations:', object$iter_stop, '/', object$max_iter)
+  cat('\nIterations:', object$iter.stop)
   
   
   cat("\n\nClustering table:")

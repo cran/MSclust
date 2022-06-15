@@ -20,7 +20,7 @@ MSclust Plotting
 ## Not run: 
 \dontrun{
 data(sim)
-result <- mscn(X = sim, k = 2, initialization = "kmeans", method = "BFGS")
+result <- mscn(X = sim, k = 2)
 plot(result)}
 ## End(Not run) 
 

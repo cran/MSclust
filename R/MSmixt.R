@@ -609,7 +609,7 @@ mscn <- function(
     #detect1        = detect1,
     detect        = detect2,
     npar           = npar,
-    #prior          = prior,
+    pi          = prior,
     mu             = mu,
     Lambda         = Lambda,
     Gamma          = Gamma,
@@ -1241,7 +1241,7 @@ mst <- function(
     #detect1        = detect1,
     detect        = detect2,##if the point is bad or not per each principal component given the cluster membership
     npar           = npar,
-   # prior          = prior,
+    pi          = prior,
     mu             = mu,
     Lambda         = Lambda,
     Gamma          = Gamma,

@@ -60,8 +60,8 @@ mst(X,k,ini="km",sz=NULL,df.min=1,dfU="num",frm="dir",m="BFGS",stop=c(10^-5,200)
 ## Not run: 
 \dontrun{
 data(sim)
-result <- mst(X = sim, k = 2, initialization = "kmeans", method = "BFGS")
-plot.MSclust(result)}
+result <- mst(X = sim, k = 2)
+plot(result)}
 
 ## End(Not run)  
 }
