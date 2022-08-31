@@ -61,7 +61,8 @@ mscn(X,k,ini="km",sz=NULL,al=c(0.5,0.99),eta.min=1.01,m="BFGS",stop=c(10^-5,200)
 \dontrun{
 data(sim)
 result <- mscn(X = sim, k = 2)
-plot(result)}
+plot(result)
+summary(result)}
 ## End(Not run) 
 }
 

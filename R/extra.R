@@ -2,52 +2,44 @@ plot.MSclust <- function(x, ...) {
   
   pch_good       <- 16
   pch_bad        <- 8
-
   
   
   
+  model    <- x$model
   clusters <- as.character(x$cluster)
-  
-  p=ncol(x$detect)
-  outliers<-matrix(0,nrow(x$detect),ncol(x$detect))
-  for(i in 1:p){
-    outliers[which(x$detect[,i]=='bad'),i]=1
-  }
- 
+  outliers <- x$detect
   dat      <- x$X
   d        <- ncol(dat)
   d        <- ifelse(is.null(d), 1, d)
   
   if (d > 1) {
     if (d < 10) {
-      ggparcoord(data = cbind(dat, clusters), groupColumn = d + 1, columns = 1:d) +
-        theme_bw() + ggtitle('Parallel Coordinate Plot')
+      print(ggparcoord(data = cbind(dat, clusters=clusters), mapping=ggplot2::aes(color=as.factor(clusters)), columns = 1:d) +
+              theme_bw() + ggtitle('Parallel Coordinate Plot')+scale_color_discrete("Clusters",labels=levels(clusters)))
       
       if (d > 2) {
-        print(pairs(dat, col = clusters,
-              main = 'Cluster Memberships'))
+        print(pairs(dat, col = clusters, 
+                    main = 'Cluster Memberships'))
       } else {
-        print(plot(dat, col = clusters, pch = ifelse(outliers, pch_bad, pch_good),
-             main = 'Cluster Memberships'))
+        print(plot(dat, col = clusters, 
+                   main = 'Cluster Memberships'))
       }
-   }
-   else {
-     print(ggparcoord(data = cbind(clusters, dat), groupColumn = 1, columns = 2:11) +
-        theme_bw() + ggtitle('Parallel Coordinate Plot - First 10 varaibles'))
+    }
+    else {
+      print(ggparcoord(data = cbind(clusters=clusters, dat), mapping=ggplot2::aes(color=as.factor(clusters)), columns = 2:11) +
+              theme_bw() + ggtitle('Parallel Coordinate Plot - First 10 varaibles')+scale_color_discrete("Clusters",labels=levels(clusters)))
     }
   }
   
   #++++ Log-likelihood over iterations ++++#
- # plot(x$loglik, type = 'b', pch = 16, xlab = 'Iteration', ylab = 'Log-Likelihood')
+  # plot(x$loglik, type = 'b', pch = 16, xlab = 'Iteration', ylab = 'Log-Likelihood')
 }
 
 
-  
-  summary.MSclust <- function(object, ...) {
-  
+
+summary.MSclust <- function(object, ...) {
   
   cat('\nIterations:', object$iter.stop)
-  
   
   cat("\n\nClustering table:")
   print(table(object$cluster))

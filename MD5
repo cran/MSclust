@@ -1,10 +1,10 @@
-381d6609bd58a66062aa0861159a01f1 *DESCRIPTION
-a53c0adfd0e94f7bb5382efef0485ed9 *NAMESPACE
+5eee85bd0ff516c743ce18d992e144f6 *DESCRIPTION
+77eb7b002e6c9110cacc1555e46d5ef8 *NAMESPACE
 7a50255a82c2c9f945bbaaf1c0e6e1fb *R/MSmixt.R
 4076cfbc2d44a08537f8a98965aa2d2c *R/PLRfactorization.R
-96744aede3ba16d1a6ae8adb40bacc26 *R/extra.R
+7a0ba4a8b15819fd255794a42468cad9 *R/extra.R
 22343dbced4e865013629cc7b24caa6a *data/sim.rda
-a948401cdf83dffa271f791c9aff560f *man/mscn.Rd
+ec32e4d6b4170d292d6705e8516b2ce6 *man/mscn.Rd
 93cf17d0f1968fad20c36ff517f1dd2e *man/mst.Rd
 4637e6f98492fff882279bfff905f09d *man/plot.MSclust.Rd
 487ec83e31e92eb6bf4d45ee1347a1bc *man/rmscn.Rd

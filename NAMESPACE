@@ -8,7 +8,7 @@ importFrom("cluster", "pam")
 importFrom("graphics", "axis", "box", "pairs", "par", "plot")
 importFrom("stats", "dgamma", "dnorm", "kmeans", "optim", "rbinom",
           "rchisq", "rgamma", "rmultinom", "rnorm", "runif")
-importFrom("ggplot2", "theme_bw", "ggtitle")
+importFrom("ggplot2", "theme_bw", "ggtitle","scale_color_discrete")
 importFrom("GGally", "ggparcoord")
 export(dmscn, rmscn, mscn, dmst, rmst, mst, plot.MSclust, summary.MSclust)
 S3method(plot,MSclust)
