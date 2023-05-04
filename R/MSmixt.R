@@ -115,7 +115,6 @@ dmscn <- function(x, mu = NULL, L=NULL, G=NULL, Sigma=NULL, alpha = NULL, eta = 
   d = ifelse(is.null(x=ncol(x)),1,ncol(x))
   # Lambda is a matrix with diagonal elements
   if(is.null(mu)) mu=rep(0,d)
-  if(is.null(Sigma)) Sigma=diag(d)
   if(is.null(alpha)) alpha = rep(0.99,d)
   if(is.null(eta)) eta = rep(1.01,d)
   
@@ -134,7 +133,12 @@ dmscn <- function(x, mu = NULL, L=NULL, G=NULL, Sigma=NULL, alpha = NULL, eta = 
     Lambda <- diag(temp$values)
     Gamma  <- temp$vectors
   }
-
+  if(is.null(Sigma)&is.null(G)){Sigma=diag(d)
+  temp   <- eigen(Sigma)
+  Lambda <- diag(temp$values)
+  Gamma  <- temp$vectors
+  }
+  
   if(is.matrix(x))
     q <- nrow(x)
   if(is.vector(x) & d > 1)
@@ -501,7 +505,7 @@ mscn <- function(
     iteration <- iteration + 1
     cat("*")
 
-    if(iteration == iter.max | (loglik[iteration]-loglik[iteration-1])<tol)
+    if(iteration == iter.max |  (loglik[iteration]-loglik[iteration-1])<tol)
       check <- 1
 
   }
@@ -621,6 +625,7 @@ mscn <- function(
     weight     = correction,##v+(1-v)/eta
     iter.stop      = iteration,
     loglik         = final.loglik,
+    llv= loglik,
     AIC            = AIC,
     BIC            = BIC,
     ICL            = ICL,
@@ -688,7 +693,6 @@ dmst <- function(x, mu = NULL, L = NULL, G = NULL, Sigma = NULL, theta = NULL, f
    d = ifelse(is.null(x=ncol(x)),1,ncol(x))
   # Lambda is a matrix with diagonal elements
   if(is.null(mu)) mu=rep(0,d)
-  if(is.null(Sigma)) Sigma=diag(d)
   if(is.null(theta)) theta = rep(100,d)
   # Lambda is a vector with diagonal elements
   
@@ -702,7 +706,11 @@ dmst <- function(x, mu = NULL, L = NULL, G = NULL, Sigma = NULL, theta = NULL, f
     Lambda <- diag(temp$values)
     Gamma  <- temp$vectors
   }
-  
+   if(is.null(Sigma)&is.null(G)){Sigma=diag(d)
+   temp   <- eigen(Sigma)
+   Lambda <- diag(temp$values)
+   Gamma  <- temp$vectors}
+   
   if(is.matrix(x))
     q <- nrow(x)
   if(is.vector(x) & d > 1)

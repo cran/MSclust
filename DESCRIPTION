@@ -1,8 +1,8 @@
 Package: MSclust
 Type: Package
 Title: Multiple-Scaled Clustering
-Version: 1.0.2
-Date: 2022-08-30
+Version: 1.0.3
+Date: 2023-05-04
 Authors@R: c(person("Cristina", "Tortora", role = c("aut", "cre","cph"), email = "grikris1@gmail.com", comment = c(ORCID = "0000-0001-8351-3730")),
              person("Antonio", "Punzo", role = c("aut"), comment = c(ORCID = "0000-0001-7742-1821")),
              person("Louis", "Tran", role = c("aut")))
@@ -20,9 +20,9 @@ Imports: gtools, Matrix, mclust, mnormt, mvtnorm, psych, cluster,
         ggplot2, GGally
 License: GPL (>= 2)
 NeedsCompilation: no
-Packaged: 2022-08-31 13:02:07 UTC; cristina
+Packaged: 2023-05-04 19:46:23 UTC; cristina
 Repository: CRAN
-Date/Publication: 2022-08-31 13:20:07 UTC
+Date/Publication: 2023-05-04 23:00:10 UTC
 Author: Cristina Tortora [aut, cre, cph]
     (<https://orcid.org/0000-0001-8351-3730>),
   Antonio Punzo [aut] (<https://orcid.org/0000-0001-7742-1821>),
